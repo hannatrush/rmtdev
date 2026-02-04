@@ -74,7 +74,9 @@ export function useSelectedJobItems() {
     })),
   });
 
-  const bookmarkedJobItems = results.map((result) => result.data).filter((jobItem) => !!jobItem);
+  const bookmarkedJobItems = results
+    .map((result) => result.data)
+    .filter((jobItem) => !!jobItem) as JobItem[];
   const isLoading = results.some((result) => result.isLoading);
 
   return {
